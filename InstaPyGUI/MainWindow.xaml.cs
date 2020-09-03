@@ -36,7 +36,7 @@ namespace InstaPyGUI
                 menuLang.Header = lang.DisplayName;
                 menuLang.Tag = lang;
                 menuLang.IsChecked = lang.Equals(currentLanguage);
-                menuLang.Click += Button_Click;
+                menuLang.Click += MenuItem_Language_Click;
                 menuLanguage.Items.Add(menuLang);
             }
         }
@@ -50,7 +50,8 @@ namespace InstaPyGUI
                 i.IsChecked = ci != null && ci.Equals(currLang);
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void MenuItem_Language_Click(object sender, RoutedEventArgs e)
         {
             MenuItem mi = sender as MenuItem;
             if (mi != null)
@@ -60,6 +61,69 @@ namespace InstaPyGUI
                 {
                     App.Language = lang;
                 }
+            }
+        }
+
+        // Like
+        private void expander_like_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if(expander_like.IsEnabled != true)
+            {
+                expander_like.IsEnabled = true;
+                if (expander_like.IsExpanded != true)
+                    expander_like.IsExpanded = true;
+            }
+        }
+
+        private void expander_like_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (expander_like.IsEnabled != false)
+            {
+                expander_like.IsEnabled = false;
+                if (expander_like.IsExpanded != false)
+                    expander_like.IsExpanded = false;
+            }
+        }
+
+        // Follow
+        private void expander_follow_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (expander_follow.IsEnabled != true)
+            {
+                expander_follow.IsEnabled = true;
+                if (expander_follow.IsExpanded != true)
+                    expander_follow.IsExpanded = true;
+            }
+        }
+
+        private void expander_follow_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (expander_follow.IsEnabled != false)
+            {
+                expander_follow.IsEnabled = false;
+                if (expander_follow.IsExpanded != false)
+                    expander_follow.IsExpanded = false;
+            }
+        }
+
+        // Unfollow
+        private void expander_unfollow_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (expander_unfollow.IsEnabled != true)
+            {
+                expander_unfollow.IsEnabled = true;
+                if (expander_unfollow.IsExpanded != true)
+                    expander_unfollow.IsExpanded = true;
+            }
+        }
+
+        private void expander_unfollow_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (expander_unfollow.IsEnabled != false)
+            {
+                expander_unfollow.IsEnabled = false;
+                if (expander_unfollow.IsExpanded != false)
+                    expander_unfollow.IsExpanded = false;
             }
         }
     }

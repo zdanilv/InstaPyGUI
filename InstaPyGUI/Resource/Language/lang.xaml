@@ -2,7 +2,24 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:InstaPyGUI.Resource.Language"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
-    <v:String x:Key="m_Title_Login">Login</v:String>
-    <v:String x:Key="m_Title_Password">Password</v:String>
+    <v:String x:Key="m_title_Login">Login</v:String>
+    <v:String x:Key="m_title_Password">Password</v:String>
+    <v:String x:Key="m_remember_me">Remember me</v:String>
+
+    <v:String x:Key="m_like_expander">Like</v:String>
+    <v:String x:Key="m_like_by_feed">Like by feed</v:String>
+    <v:String x:Key="m_like_by_hashtags">Like by hashtags</v:String>
+    <v:String x:Key="m_set_smart_hashtags">Set Smart Hashtags</v:String>
+    <v:String x:Key="m_like_by_location">Like by location</v:String>
+
+    <v:String x:Key="m_amount">Amount</v:String>
+    <v:String x:Key="m_limit">Limit</v:String>
+
+    <v:String x:Key="m_general_tabItem">General</v:String>
+    <v:String x:Key="m_configuration_tabItem">Configuration</v:String>
+    <v:String x:Key="m_settings_tabItem">Settings</v:String>
+
+    <v:String x:Key="m_sign_in_button">Sign In</v:String>
+
     <v:String x:Key="m_Header_Menu">Language</v:String>
 </ResourceDictionary>

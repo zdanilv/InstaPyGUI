@@ -6,24 +6,92 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:InstaPyGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStyle="ToolWindow">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792">
-            <TabItem Name="tabItem_general" Header="TabItem">
+            <TabItem Name="tabItem_general" Header="{DynamicResource m_general_tabItem}">
                 <Grid>
-                    
-                    <Label Content="{Binding Path=Title_Login, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="112,31,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
-                    <TextBox Text="{DynamicResource m_Title_Login}" HorizontalAlignment="Left" Height="23" Margin="192,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="{Binding Path=Title_Password, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="112,73,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
-                    <TextBox Text="{DynamicResource m_Title_Password}" HorizontalAlignment="Left" Height="23" Margin="192,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button Click="Button_Click" Content="Button" HorizontalAlignment="Left" Margin="237,148,0,0" VerticalAlignment="Top" Width="75"/>
-                    <CheckBox IsChecked="{Binding Path=SaveData, UpdateSourceTrigger=PropertyChanged}" Content="CheckBox" HorizontalAlignment="Left" Margin="112,120,0,0" VerticalAlignment="Top"/>
-                    <Label Name="label1" Content="Label" HorizontalAlignment="Left" Margin="100,158,0,0" VerticalAlignment="Top"/>
+                    <GroupBox Header="Sign In" Margin="10,10,552,213">
+                        <Grid>
+                            <Label Content="{DynamicResource m_title_Login}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+                            <TextBox Text="{Binding Path=Title_Login, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="90,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+                            <Label Content="{DynamicResource m_title_Password}" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+                            <TextBox Text="{Binding Path=Title_Password, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="90,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+                            <CheckBox Content="{DynamicResource m_remember_me}" IsChecked="{Binding Path=SaveData, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+                            <Button Content="{DynamicResource m_sign_in_button}" HorizontalAlignment="Left" Margin="137,81,0,0" VerticalAlignment="Top" Width="75"/>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Console" Margin="245,10,20,20">
+                        <TextBlock Text="Output:" Foreground="Black" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Height="300" Width="510"/>
+
+                    </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Name="tabItem_settings" Header="TabItem">
+            <TabItem Name="tabItem_configuration" Header="{DynamicResource m_configuration_tabItem}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox Name="expander_like_checkBox" Checked="expander_like_checkBox_Checked" Unchecked="expander_like_checkBox_Unchecked" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,16,0,0"/>
+                    <Expander Name="expander_like" Header="{DynamicResource m_like_expander}" Grid.Column="1" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
+                        <Grid Margin="0,0,0,-337">
+                            <CheckBox Name="like_by_feed_checkBox" Content="{DynamicResource m_like_by_feed}" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,5,0,0"/>
+                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,0,0" Width="70"/>
+                            <TextBox Name="like_by_feed_amount_textBox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,28,0,0" VerticalAlignment="Top" Width="65"/>
+                            <CheckBox Name="like_by_hashtags_checkBox" Content="{DynamicResource m_like_by_hashtags}" HorizontalAlignment="Left" Margin="5,63,0,0" VerticalAlignment="Top"/>
+                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Name="like_by_hashtags_amount_textBox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,86,0,0" VerticalAlignment="Top" Width="65"/>
+                            <CheckBox Name="set_smart_hashtags_checkBox" Content="{DynamicResource m_set_smart_hashtags}" HorizontalAlignment="Left" Margin="23,121,0,0" VerticalAlignment="Top"/>
+                            <TextBox Name="hashtags_like_textBox" Text="russia, moscow, instagram" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,151,0,0" VerticalAlignment="Top" Width="140"/>
+                            <Label Content="{DynamicResource m_limit}" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Name="smart_hashtags_limit_textox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,186,0,0" VerticalAlignment="Top" Width="65"/>
+                            <CheckBox Name="like_by_location_checkBox" Content="{DynamicResource m_like_by_location}" HorizontalAlignment="Left" Margin="5,221,0,0" VerticalAlignment="Top"/>
+                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Name="like_by_location_amount_textBox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,244,0,0" VerticalAlignment="Top" Width="65"/>
+                            <TextBox Name="location_like_textBox" Text="russia, cheboksary" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,279,0,0" VerticalAlignment="Top" Width="140"/>
+
+                        </Grid>
+                    </Expander>
+                    <CheckBox Name="expander_follow_checkBox" Checked="expander_follow_checkBox_Checked" Unchecked="expander_follow_checkBox_Unchecked" Grid.Column="2" HorizontalAlignment="Left" Margin="5,16,0,0" VerticalAlignment="Top"/>
+                    <Expander Name="expander_follow" Header="Follow" Grid.Column="2" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
+                        <Grid Margin="0,0,0,-339">
+                            <CheckBox Content="Follow by tags" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
+                            <Label Content="Tags" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" Width="50"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="65,28,0,0" VerticalAlignment="Top" Width="85"/>
+                            <Label Content="Amount" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,63,0,0" VerticalAlignment="Top" Width="65"/>
+                            <CheckBox Content="Follow by location" HorizontalAlignment="Left" Margin="5,98,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,121,0,0" VerticalAlignment="Top" Width="65"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,156,0,0" VerticalAlignment="Top" Width="140"/>
+                            <CheckBox Content="Follow user followers" HorizontalAlignment="Left" Margin="5,191,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,214,0,0" VerticalAlignment="Top" Width="65"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,249,0,0" VerticalAlignment="Top" Width="140"/>
+
+                        </Grid>
+                    </Expander>
+
+                    <CheckBox Name="expander_unfollow_checkBox" Checked="expander_unfollow_checkBox_Checked" Unchecked="expander_unfollow_checkBox_Unchecked" Grid.Column="3" HorizontalAlignment="Left" Margin="5,16,0,0" VerticalAlignment="Top"/>
+                    <Expander Name="expander_unfollow" Grid.Column="3"  Header="Unfollow" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
+                        <Grid Margin="0,0,0,-337">
+                            <Label Content="Amount" Margin="10,10,65,301" Width="85"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.542,0.367"/>
+                            <Label Content="After hour:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="85" Height="30"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,46,0,0" VerticalAlignment="Top" Width="50"/>
+                        </Grid>
+                    </Expander>
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabItem_settings" Header="{DynamicResource m_settings_tabItem}">
                 <Menu>
-                    <MenuItem Name="menuLanguage" Header="{DynamicResource m_Header_Menu}"/>
+                    <MenuItem Name="menuLanguage" Header="{DynamicResource m_Header_Menu}" Width="75" Height="30"/>
                 </Menu>
             </TabItem>
         </TabControl>

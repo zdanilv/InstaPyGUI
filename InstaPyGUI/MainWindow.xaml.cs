@@ -85,6 +85,86 @@ namespace InstaPyGUI
             }
         }
 
+        private void like_by_feed_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (like_by_feed_amount_textBox.IsEnabled != true)
+                like_by_feed_amount_textBox.IsEnabled = true;
+            if (like_by_feed_amount_label.IsEnabled != true)
+                like_by_feed_amount_label.IsEnabled = true;
+        }
+
+        private void like_by_feed_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (like_by_feed_amount_textBox.IsEnabled != false)
+                like_by_feed_amount_textBox.IsEnabled = false;
+            if (like_by_feed_amount_label.IsEnabled != false)
+                like_by_feed_amount_label.IsEnabled = false;
+        }
+
+        private void like_by_hashtags_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if(like_by_hashtags_amount_textBox.IsEnabled != true)
+            {
+                like_by_hashtags_amount_textBox.IsEnabled = true;
+                hashtags_like_textBox.IsEnabled = true;
+            }
+            if (set_smart_hashtags_checkBox.IsEnabled != true)
+                set_smart_hashtags_checkBox.IsEnabled = true;
+            if(like_by_hashtags_amount_label.IsEnabled != true)
+                like_by_hashtags_amount_label.IsEnabled = true;
+        }
+
+        private void like_by_hashtags_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if(like_by_hashtags_amount_textBox.IsEnabled != false)
+            {
+                like_by_hashtags_amount_textBox.IsEnabled = false;
+                hashtags_like_textBox.IsEnabled = false;
+            }
+            if (set_smart_hashtags_checkBox.IsEnabled != false)
+                set_smart_hashtags_checkBox.IsEnabled = false;
+            if (like_by_hashtags_amount_label.IsEnabled != false)
+                like_by_hashtags_amount_label.IsEnabled = false;
+        }
+
+        private void set_smart_hashtags_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (smart_hashtags_limit_textox.IsEnabled != true)
+                smart_hashtags_limit_textox.IsEnabled = true;
+            if (limit_label.IsEnabled != true)
+                limit_label.IsEnabled = true;
+        }
+
+        private void set_smart_hashtags_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (smart_hashtags_limit_textox.IsEnabled != false)
+                smart_hashtags_limit_textox.IsEnabled = false;
+            if (limit_label.IsEnabled != false)
+                limit_label.IsEnabled = false;
+        }
+
+        private void like_by_location_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (like_by_location_amount_textBox.IsEnabled != true)
+                like_by_location_amount_textBox.IsEnabled = true;
+
+            if (location_like_textBox.IsEnabled != true)
+                location_like_textBox.IsEnabled = true;
+            if (like_by_location_amount_label.IsEnabled != true)
+                like_by_location_amount_label.IsEnabled = true;
+        }
+
+        private void like_by_location_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (like_by_location_amount_textBox.IsEnabled != false)
+                like_by_location_amount_textBox.IsEnabled = false;
+
+            if (location_like_textBox.IsEnabled != false)
+                location_like_textBox.IsEnabled = false;
+            if (like_by_location_amount_label.IsEnabled != false)
+                like_by_location_amount_label.IsEnabled = false;
+        }
+
         // Follow
         private void expander_follow_checkBox_Checked(object sender, RoutedEventArgs e)
         {

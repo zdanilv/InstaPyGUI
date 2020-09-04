@@ -22,7 +22,7 @@
 
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Console" Margin="245,10,20,20">
+                    <GroupBox Header="{DynamicResource m_console}" Margin="245,10,20,20">
                         <TextBlock Text="Output:" Foreground="Black" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Height="300" Width="510"/>
 
                     </GroupBox>
@@ -40,52 +40,63 @@
                     <CheckBox Name="expander_like_checkBox" Checked="expander_like_checkBox_Checked" Unchecked="expander_like_checkBox_Unchecked" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,16,0,0"/>
                     <Expander Name="expander_like" Header="{DynamicResource m_like_expander}" Grid.Column="1" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
                         <Grid Margin="0,0,0,-337">
-                            <CheckBox Name="like_by_feed_checkBox" Content="{DynamicResource m_like_by_feed}" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,5,0,0"/>
-                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,0,0" Width="70"/>
-                            <TextBox Name="like_by_feed_amount_textBox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,28,0,0" VerticalAlignment="Top" Width="65"/>
-                            <CheckBox Name="like_by_hashtags_checkBox" Content="{DynamicResource m_like_by_hashtags}" HorizontalAlignment="Left" Margin="5,63,0,0" VerticalAlignment="Top"/>
-                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="70"/>
-                            <TextBox Name="like_by_hashtags_amount_textBox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,86,0,0" VerticalAlignment="Top" Width="65"/>
-                            <CheckBox Name="set_smart_hashtags_checkBox" Content="{DynamicResource m_set_smart_hashtags}" HorizontalAlignment="Left" Margin="23,121,0,0" VerticalAlignment="Top"/>
-                            <TextBox Name="hashtags_like_textBox" Text="russia, moscow, instagram" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,151,0,0" VerticalAlignment="Top" Width="140"/>
-                            <Label Content="{DynamicResource m_limit}" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Width="70"/>
-                            <TextBox Name="smart_hashtags_limit_textox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,186,0,0" VerticalAlignment="Top" Width="65"/>
-                            <CheckBox Name="like_by_location_checkBox" Content="{DynamicResource m_like_by_location}" HorizontalAlignment="Left" Margin="5,221,0,0" VerticalAlignment="Top"/>
-                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="70"/>
-                            <TextBox Name="like_by_location_amount_textBox" Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,244,0,0" VerticalAlignment="Top" Width="65"/>
-                            <TextBox Name="location_like_textBox" Text="russia, cheboksary" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,279,0,0" VerticalAlignment="Top" Width="140"/>
+                            <CheckBox Name="like_by_feed_checkBox" Content="{DynamicResource m_like_by_feed}" Checked="like_by_feed_checkBox_Checked" Unchecked="like_by_feed_checkBox_Unchecked" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,5,0,0"/>
+                            <Label Name="like_by_feed_amount_label" Content="{DynamicResource m_amount}" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,0,0" Width="70"/>
+                            <TextBox Name="like_by_feed_amount_textBox" Text="10" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,28,0,0" VerticalAlignment="Top" Width="65"/>
+
+                            <CheckBox Name="like_by_hashtags_checkBox" Content="{DynamicResource m_like_by_hashtags}" Checked="like_by_hashtags_checkBox_Checked" Unchecked="like_by_hashtags_checkBox_Unchecked" HorizontalAlignment="Left" Margin="5,63,0,0" VerticalAlignment="Top"/>
+                            <Label Name="like_by_hashtags_amount_label" Content="{DynamicResource m_amount}" IsEnabled="False" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Name="like_by_hashtags_amount_textBox" Text="10" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,86,0,0" VerticalAlignment="Top" Width="65"/>
+                            <CheckBox Name="set_smart_hashtags_checkBox" Content="{DynamicResource m_set_smart_hashtags}" IsEnabled="False" Checked="set_smart_hashtags_checkBox_Checked" Unchecked="set_smart_hashtags_checkBox_Unchecked" HorizontalAlignment="Left" Margin="23,121,0,0" VerticalAlignment="Top"/>
+                            <TextBox Name="hashtags_like_textBox" Text="russia, moscow, instagram" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,151,0,0" VerticalAlignment="Top" Width="140"/>
+                            <Label Name="limit_label" Content="{DynamicResource m_limit}" IsEnabled="False" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Name="smart_hashtags_limit_textox" Text="10" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,186,0,0" VerticalAlignment="Top" Width="65"/>
+
+                            <CheckBox Name="like_by_location_checkBox" Content="{DynamicResource m_like_by_location}" Checked="like_by_location_checkBox_Checked" Unchecked="like_by_location_checkBox_Unchecked" HorizontalAlignment="Left" Margin="5,221,0,0" VerticalAlignment="Top"/>
+                            <Label Name="like_by_location_amount_label" Content="{DynamicResource m_amount}" IsEnabled="False" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Name="like_by_location_amount_textBox" Text="10" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,244,0,0" VerticalAlignment="Top" Width="65"/>
+                            <TextBox Name="location_like_textBox" Text="219842857/cheboksary/" IsEnabled="False" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,279,0,0" VerticalAlignment="Top" Width="140"/>
 
                         </Grid>
                     </Expander>
                     <CheckBox Name="expander_follow_checkBox" Checked="expander_follow_checkBox_Checked" Unchecked="expander_follow_checkBox_Unchecked" Grid.Column="2" HorizontalAlignment="Left" Margin="5,16,0,0" VerticalAlignment="Top"/>
-                    <Expander Name="expander_follow" Header="Follow" Grid.Column="2" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
+                    <Expander Name="expander_follow" Header="{DynamicResource m_follow_expander}" Grid.Column="2" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
                         <Grid Margin="0,0,0,-339">
-                            <CheckBox Content="Follow by tags" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
-                            <Label Content="Tags" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" Width="50"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="65,28,0,0" VerticalAlignment="Top" Width="85"/>
-                            <Label Content="Amount" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="70"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,63,0,0" VerticalAlignment="Top" Width="65"/>
-                            <CheckBox Content="Follow by location" HorizontalAlignment="Left" Margin="5,98,0,0" VerticalAlignment="Top"/>
-                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="70"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,121,0,0" VerticalAlignment="Top" Width="65"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,156,0,0" VerticalAlignment="Top" Width="140"/>
-                            <CheckBox Content="Follow user followers" HorizontalAlignment="Left" Margin="5,191,0,0" VerticalAlignment="Top"/>
-                            <Label Content="Label" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Width="70"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,214,0,0" VerticalAlignment="Top" Width="65"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,249,0,0" VerticalAlignment="Top" Width="140"/>
+                            <CheckBox Content="{DynamicResource m_follow_by_tags}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
+                            <TextBox Text="vhs, russia" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,28,0,0" VerticalAlignment="Top" Width="140"/>
+                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,63,0,0" VerticalAlignment="Top" Width="65"/>
+
+                            <CheckBox Content="{DynamicResource m_follow_by_location}" HorizontalAlignment="Left" Margin="5,98,0,0" VerticalAlignment="Top"/>
+                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,121,0,0" VerticalAlignment="Top" Width="65"/>
+                            <TextBox Text="219842857/cheboksary/" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,156,0,0" VerticalAlignment="Top" Width="140"/>
+
+                            <CheckBox Content="{DynamicResource m_follow_user_followers}" HorizontalAlignment="Left" Margin="5,191,0,0" VerticalAlignment="Top"/>
+                            <Label Content="{DynamicResource m_amount}" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Width="70"/>
+                            <TextBox Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="85,214,0,0" VerticalAlignment="Top" Width="65"/>
+                            <TextBox Text="gothbb_2x, del_ya_ete" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="10,249,0,0" VerticalAlignment="Top" Width="140"/>
 
                         </Grid>
                     </Expander>
 
                     <CheckBox Name="expander_unfollow_checkBox" Checked="expander_unfollow_checkBox_Checked" Unchecked="expander_unfollow_checkBox_Unchecked" Grid.Column="3" HorizontalAlignment="Left" Margin="5,16,0,0" VerticalAlignment="Top"/>
-                    <Expander Name="expander_unfollow" Grid.Column="3"  Header="Unfollow" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
+                    <Expander Name="expander_unfollow" Header="{DynamicResource m_unfollow_expander}" Grid.Column="3" HorizontalAlignment="Center" Height="368" VerticalAlignment="Top" Width="160" IsExpanded="False" IsEnabled="False" Margin="28,10,10,0">
                         <Grid Margin="0,0,0,-337">
-                            <Label Content="Amount" Margin="10,10,65,301" Width="85"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.542,0.367"/>
-                            <Label Content="After hour:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="85" Height="30"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,46,0,0" VerticalAlignment="Top" Width="50"/>
+                            <Label Content="{DynamicResource m_amount}" Margin="10,10,65,301" Width="85"/>
+                            <TextBox Text="10" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.542,0.367"/>
+                            <Label Content="{DynamicResource m_unfollow_after_hour}" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="85" Height="30"/>
+                            <TextBox Text="24" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="100,46,0,0" VerticalAlignment="Top" Width="50"/>
                         </Grid>
                     </Expander>
+                    <GroupBox Header="Параметры" HorizontalAlignment="Left" Height="358" Margin="10,10,0,0" VerticalAlignment="Top" Width="178" Background="#FFF9F9F9">
+                        <Grid>
+                            <CheckBox Content="Hide browser" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Width="155"/>
+                            <CheckBox Content="Use Smart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,0,0" Width="155"/>
+                            <CheckBox Content="Save Mode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,51,0,0" Width="155"/>
+                            <CheckBox Content="Save entry data" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,74,0,0" Width="155"/>
+                        </Grid>
+                    </GroupBox>
 
                 </Grid>
             </TabItem>

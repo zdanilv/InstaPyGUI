@@ -186,6 +186,66 @@ namespace InstaPyGUI
             }
         }
 
+        private void follow_by_tags_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (follow_by_tags_textBox.IsEnabled != true)
+                follow_by_tags_textBox.IsEnabled = true;
+            if (follow_by_tags_amount_textBox.IsEnabled != true)
+                follow_by_tags_amount_textBox.IsEnabled = true;
+            if(follow_by_tags_amount_label.IsEnabled != true)
+                follow_by_tags_amount_label.IsEnabled = true;
+        }
+
+        private void follow_by_tags_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (follow_by_tags_textBox.IsEnabled != false)
+                follow_by_tags_textBox.IsEnabled = false;
+            if (follow_by_tags_amount_textBox.IsEnabled != false)
+                follow_by_tags_amount_textBox.IsEnabled = false;
+            if (follow_by_tags_amount_label.IsEnabled != false)
+                follow_by_tags_amount_label.IsEnabled = false;
+        }
+
+        private void follow_by_location_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (follow_by_location_textBox.IsEnabled != true)
+                follow_by_location_textBox.IsEnabled = true;
+            if (follow_by_location_amount_textBox.IsEnabled != true)
+                follow_by_location_amount_textBox.IsEnabled = true;
+            if (follow_by_location_amount_label.IsEnabled != true)
+                follow_by_location_amount_label.IsEnabled = true;
+        }
+
+        private void follow_by_location_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (follow_by_location_textBox.IsEnabled != false)
+                follow_by_location_textBox.IsEnabled = false;
+            if (follow_by_location_amount_textBox.IsEnabled != false)
+                follow_by_location_amount_textBox.IsEnabled = false;
+            if (follow_by_location_amount_label.IsEnabled != false)
+                follow_by_location_amount_label.IsEnabled = false;
+        }
+
+        private void follow_user_followers_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (follow_user_followers_textBox.IsEnabled != true)
+                follow_user_followers_textBox.IsEnabled = true;
+            if (follow_user_followers_amount_textBox.IsEnabled != true)
+                follow_user_followers_amount_textBox.IsEnabled = true;
+            if (follow_user_followers_amount_label.IsEnabled != true)
+                follow_user_followers_amount_label.IsEnabled = true;
+        }
+
+        private void follow_user_followers_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (follow_user_followers_textBox.IsEnabled != false)
+                follow_user_followers_textBox.IsEnabled = false;
+            if (follow_user_followers_amount_textBox.IsEnabled != false)
+                follow_user_followers_amount_textBox.IsEnabled = false;
+            if (follow_user_followers_amount_label.IsEnabled != false)
+                follow_user_followers_amount_label.IsEnabled = false;
+        }
+
         // Unfollow
         private void expander_unfollow_checkBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -193,7 +253,17 @@ namespace InstaPyGUI
             {
                 expander_unfollow.IsEnabled = true;
                 if (expander_unfollow.IsExpanded != true)
+                {
                     expander_unfollow.IsExpanded = true;
+                    if (unfollow_amount_label.IsEnabled != true)
+                        unfollow_amount_label.IsEnabled = true;
+                    if (unfollow_after_hour_label.IsEnabled != true)
+                        unfollow_after_hour_label.IsEnabled = true;
+                    if (unfollow_amount_textBox.IsEnabled != true)
+                        unfollow_amount_textBox.IsEnabled = true;
+                    if (unfollow_after_hour_textBox.IsEnabled != true)
+                        unfollow_after_hour_textBox.IsEnabled = true;
+                }
             }
         }
 
@@ -203,8 +273,30 @@ namespace InstaPyGUI
             {
                 expander_unfollow.IsEnabled = false;
                 if (expander_unfollow.IsExpanded != false)
+                {
                     expander_unfollow.IsExpanded = false;
+                    if (unfollow_amount_label.IsEnabled != false)
+                        unfollow_amount_label.IsEnabled = false;
+                    if (unfollow_after_hour_label.IsEnabled != false)
+                        unfollow_after_hour_label.IsEnabled = false;
+                    if (unfollow_amount_textBox.IsEnabled != false)
+                        unfollow_amount_textBox.IsEnabled = false;
+                    if (unfollow_after_hour_textBox.IsEnabled != false)
+                        unfollow_after_hour_textBox.IsEnabled = false;
+                }
             }
+        }
+
+        private void excpet_for_users_checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (excpet_for_users_textBox.IsEnabled != true)
+                excpet_for_users_textBox.IsEnabled = true;
+        }
+
+        private void excpet_for_users_checkBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (excpet_for_users_textBox.IsEnabled != false)
+                excpet_for_users_textBox.IsEnabled = false;
         }
     }
 }

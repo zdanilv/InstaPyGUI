@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:InstaPyGUI.Resource.Language"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
-    <v:String x:Key="m_general_tabItem">General</v:String>
+    <v:String x:Key="m_home_tabItem">Home</v:String>
 
     <v:String x:Key="m_title_Login">Login</v:String>
     <v:String x:Key="m_title_Password">Password</v:String>

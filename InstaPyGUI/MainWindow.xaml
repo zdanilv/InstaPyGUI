@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:InstaPyGUI"
+        xmlns:vm="clr-namespace:InstaPyGUI.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStyle="ToolWindow">
     <Grid>
@@ -14,17 +15,16 @@
                     <GroupBox Header="Sign In" Margin="10,10,552,213">
                         <Grid>
                             <Label Content="{DynamicResource m_title_Login}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
-                            <TextBox Text="{Binding Path=Title_Login, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="90,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+                            <TextBox Text="{Binding Login}" HorizontalAlignment="Left" Height="23" Margin="90,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
                             <Label Content="{DynamicResource m_title_Password}" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
-                            <TextBox Text="{Binding Path=Title_Password, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="90,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-                            <CheckBox Content="{DynamicResource m_remember_me}" IsChecked="{Binding Path=SaveData, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
-                            <Button Content="{DynamicResource m_sign_in_button}" HorizontalAlignment="Left" Margin="137,81,0,0" VerticalAlignment="Top" Width="75"/>
+                            <TextBox Text="{Binding Password}" HorizontalAlignment="Left" Height="23" Margin="90,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+                            <CheckBox Content="{DynamicResource m_remember_me}" IsChecked="{Binding SaveLoginDetails, Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+                            <Button Content="{DynamicResource m_sign_in_button}" Command="{Binding SignInCommand}" HorizontalAlignment="Left" Margin="137,81,0,0" VerticalAlignment="Top" Width="75"/>
 
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="{DynamicResource m_console}" Margin="245,10,20,20">
-                        <TextBlock Text="Output:" Foreground="Black" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Height="300" Width="510"/>
-
+                        <TextBlock Text="Out" Foreground="Black" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Height="300" Width="510"/>
                     </GroupBox>
                 </Grid>
             </TabItem>
@@ -93,10 +93,10 @@
                     </Expander>
                     <GroupBox Header="Параметры" HorizontalAlignment="Left" Height="358" Margin="10,10,0,0" VerticalAlignment="Top" Width="178" Background="#FFF9F9F9">
                         <Grid>
-                            <CheckBox Content="Hide browser" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Width="155"/>
-                            <CheckBox Content="Use Smart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,0,0" Width="155"/>
-                            <CheckBox Content="Save Mode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,51,0,0" Width="155"/>
-                            <CheckBox Content="Save entry data" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,74,0,0" Width="155"/>
+                            <CheckBox Name="configuration_hide_browser_checkBox" Content="Hide browser" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Width="155"/>
+                            <CheckBox Name="configuration_use_smart_checkBox" Content="Use Smart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,0,0" Width="155"/>
+                            <CheckBox Name="configuration_save_mode_checkBox" Content="Save Mode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,51,0,0" Width="155"/>
+                            <CheckBox Name="configuration_save_entry_data_checkBox" Content="Save entry data" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,74,0,0" Width="155"/>
                         </Grid>
                     </GroupBox>
 
